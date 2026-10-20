@@ -1,8 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="868" height="158" viewBox="0 0 868 158" role="img" aria-label="Repos going public soon.">
-<title>Repos going public soon.</title>
-<style>.display { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Arial Black', Arial, sans-serif; }.mono { font-family: ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace; }.blink { animation: blink 1.1s steps(1) infinite; }@keyframes blink { 50% { opacity: 0; } }@media (prefers-reduced-motion: reduce) { .blink { animation: none; } }</style>
-<rect x="8" y="8" width="860" height="150" rx="14" fill="#305DFF"/><rect x="1.5" y="1.5" width="857" height="147" rx="12.5" fill="#0E1116" stroke="#D7F7AA" stroke-width="3"/>
-<text x="32" y="46" class="mono" font-size="12" font-weight="700" letter-spacing="2" fill="#D7F7AA">STATUS · IN PROGRESS</text>
-<text x="30" y="94" class="display" font-size="36" font-weight="900" letter-spacing="-1" fill="#D7F7AA">Repos going public soon<tspan class="blink" fill="#305DFF">_</tspan></text>
-<text x="32" y="126" class="mono" font-size="14" fill="#9BA3AF">Projects land here as soon as they ship.</text>
-</svg>

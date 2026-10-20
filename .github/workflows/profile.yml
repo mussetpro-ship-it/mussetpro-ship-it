@@ -1,0 +1,37 @@
+# Redraws the activity chart every morning from the profile's contribution calendar,
+# and commits the result only when it changed.
+name: Profile
+
+on:
+  schedule:
+    - cron: "17 5 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Fetch the contribution calendar
+        run: python3 scripts/fetch_contributions.py
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Draw the README and its images
+        run: python3 scripts/build.py
+      - name: Commit if anything changed
+        run: |
+          git add data assets README.md
+          if git diff --cached --quiet; then
+            echo "Nothing changed."
+          else
+            git config user.name "github-actions[bot]"
+            git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+            git commit -m "Redraw the activity chart"
+            git push
+          fi
